@@ -56,9 +56,10 @@
   if (!pdfImageRep)
     return nil;
 
+  int x = 4; // This seems good but I don't know why.
   NSSize size;
-  size.width  = [pdfImageRep pixelsWide];
-  size.height = [pdfImageRep pixelsHigh];
+  size.width  = [pdfImageRep pixelsWide] * nazo;
+  size.height = [pdfImageRep pixelsHigh] * nazo;
 
   NSImage *image = [[[NSImage alloc] initWithSize:size] autorelease];
   if (!image)
